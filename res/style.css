@@ -33,12 +33,20 @@ h2{
     padding: 50px 15px;
 }
 .banner{
-    background-color: #ccc;
+    background-image: url("./banner.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     height: 100vh;
     min-height: 300px;
 }
 .intro{
-
+    display: inline-block;
+    background: #fff;
+    border-radius: 5px;
 }
 .mb20{
     margin-bottom: 20px;
@@ -115,5 +123,13 @@ h2{
     }
     .links .icon img{
         height: 40px;
+    }
+    .intro{
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    .middle {
+        position: relative;
+        top: 80px;
     }
 }
