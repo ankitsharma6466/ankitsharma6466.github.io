@@ -14,12 +14,17 @@ h1{
     font-size: 72px;
     margin: 0 0 30px 0;
     text-transform: uppercase;
+    color: #424242;
 }
 h2{
     font-size: 42px;
     margin: 0 0 20px 0;
     color: #4A90E2;
     text-transform: uppercase;
+}
+.clearfix {
+    overflow: auto;
+    zoom: 1;
 }
 .font-color-primary{
     color: #4A90E2;
@@ -37,14 +42,59 @@ h2{
 .mb20{
     margin-bottom: 20px;
 }
+.links{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.links .icon{
+    margin-bottom: 10px;
+}
 .links .icon img{
     height: 72px;
-    margin-right: 15px;
+    margin: 0 auto;
 }
-.links .text a{
+
+.link{
+    width: 25%;
+    float: left;
+    min-height: 1px;
+    position: relative;
+    text-align: center;
     text-decoration: none;
-    transition: all .3s linear;
+    color: #595959;
 }
-.links .text a:hover{
-   color: #4A90E2;
+.link .text{
+    transition: all .2s linear;
+}
+.link:hover .text{
+    color: #4A90E2;
+}
+
+@media (max-width: 768px) {
+    body{
+        font-size: 16px;
+    }
+    h1{
+        font-size: 42px;
+    }
+    h2{
+        font-size: 24px;
+    }
+    .about, .connect{
+        text-align: center;
+    }
+    .about .description{
+        text-align: justify;
+        text-justify: inter-word;
+    }
+    .link{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+    .links .icon {
+        margin-bottom: 5px;
+    }
+    .links .icon img{
+        height: 40px;
+    }
 }
