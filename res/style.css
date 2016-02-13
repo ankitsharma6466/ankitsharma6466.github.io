@@ -34,10 +34,11 @@ h2{
 }
 .banner{
     background-color: #ccc;
+    height: 100vh;
+    min-height: 300px;
 }
 .intro{
-    height: 100vh;
-    min-height: 600px;
+
 }
 .mb20{
     margin-bottom: 20px;
@@ -70,6 +71,24 @@ h2{
     color: #4A90E2;
 }
 
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%
+}
+
 @media (max-width: 768px) {
     body{
         font-size: 16px;
@@ -80,7 +99,7 @@ h2{
     h2{
         font-size: 24px;
     }
-    .about, .connect{
+    .about, .connect, .contact{
         text-align: center;
     }
     .about .description{
