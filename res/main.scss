@@ -1,0 +1,163 @@
+@import "variables";
+@import "grid";
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  background: $background-primary;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  font-size: 1.8rem;
+  margin: 0;
+  padding: 0;
+  color: $text-primary;
+}
+
+.block {
+  padding: $gutter-width*2 0;
+
+  >.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $text-secondary;
+    text-transform: uppercase;
+    margin-bottom: $gutter-width*2;
+  }
+}
+
+.alternate {
+  background-color: $background-secondary;
+}
+
+.intro {
+  .title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: $text-title;
+    margin-bottom: $gutter-width*2;
+  }
+  .text {
+    margin-bottom: $gutter-width*2;
+    text-align: justify;
+  }
+  .image {
+    text-align: center;
+
+    img {
+      max-height: 400px;
+      border-radius: 10px;
+    }
+  }
+}
+
+.blogs {
+
+  .blog {
+    text-decoration: none;
+    display: block;
+    color: $text-primary;
+    background-color: $background-primary;
+    padding: $gutter-width;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s all linear;
+    margin-bottom: $gutter-width;
+
+    &:hover {
+      color: $text-title;
+      box-shadow: 0 2px 10px 0px #d4d4d4;
+    }
+
+    .image {
+      height: 200px;
+
+      img {
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+    }
+    .title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-top: $gutter-width;
+    }
+    .desc {
+      margin-top: $gutter-width;
+    }
+  }
+}
+
+.contributions {
+
+  .contribution {
+    text-decoration: none;
+    display: block;
+    color: $text-primary;
+    margin-bottom: $gutter-width;
+    background: $background-secondary;
+    padding: $gutter-width;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s all linear;
+
+    &:hover {
+      color: $text-title;
+      box-shadow: 0 2px 10px 0px #d4d4d4;
+    }
+
+    .title {
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+    .desc {
+      margin-top: $gutter-width;
+    }
+  }
+
+  .info {
+    font-style: italic;
+    color: $text-secondary;
+    font-size: 1.6rem;
+  }
+}
+
+.contact {
+  .details {
+    margin-bottom: $gutter-width*2;
+
+    a {
+      text-decoration: none;
+      color: $text-primary;
+      display: block;
+      transition: .2s all linear;
+
+      &:hover {
+        color: $text-title;
+      }
+    }
+    .phone {
+      margin-top: $gutter-width;
+      font-size: 2.4rem;
+      font-weight: 700;
+    }
+    .email {
+      font-size: 2rem;
+      margin-top: $gutter-width/2;
+    }
+  }
+  .social {
+    text-align: center;
+    text-decoration: none;
+    display: block;
+
+    img {
+      height: 56px;
+      cursor: pointer;
+    }
+  }
+}
+
