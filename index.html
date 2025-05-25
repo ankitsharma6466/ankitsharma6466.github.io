@@ -356,7 +356,8 @@
         const scrollProgress = docHeight > 0 ? Math.min(scrollY / docHeight, 1) : 0; // 0 to 1, capped at 1
 
         // Calculate opacity: starts at 0.2, goes down to 0.0 as scrollProgress goes from 0 to 1
-        const opacity = 0.2 * (1 - scrollProgress);
+        const opacity = 0.2 * (1 - (scrollProgress * .3));
+        // const opacity = 0.2;
 
         // Original background gradient positions
         const bg1_x = 20 + (scrollProgress * 80); // 20% to 100%
