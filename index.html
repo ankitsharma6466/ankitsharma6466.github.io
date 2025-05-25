@@ -1,1 +1,406 @@
-<html><head><title>Ankit Sharma - Android and Web developer</title><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/><meta content="Based out of Delhi NCR, Software Engineer, Android and Web developer" property="og:description"/><meta name="description" content="Based out of Delhi NCR, Software Engineer, Android and Web developer"/><meta name="keywords" content="Ankit, Sharma, Ankit Sharma, Software Engineer, Architect, Android, developer, web, frontend, reactjs, kotlin, Applications"/><meta name="theme-color" content="#000"/><link href="manifest.json" rel="manifest"/><link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/><link href="res/main.css" rel="stylesheet"/></head><body><div class="background"><div class="content"><div class="data"><div class="title">Hello!!</div><div class="text">I am Ankit Sharma,</div><div class="text">Software Engineer by profession, Passionate about building applications, constantly perfecting my craft and producing work that I can be proud of.</div><div class="sub-title">Connect with me</div><div class="connect"><a class="icon" href="https://github.com/ankitsharma6466" target="_blank"><img src="res/github-logo.svg"/></a><a class="icon" href="https://medium.com/@ankitsharma6466" target="_blank"><img src="res/medium.svg"/></a><a class="icon" href="https://www.linkedin.com/in/ankitsharma6466/" target="_blank"><img src="res/linkedin-button.svg"/></a><a class="icon" href="https://www.facebook.com/ankitsharma6466" target="_blank"><img src="res/facebook-logo-button.svg"/></a><a class="icon" href="https://twitter.com/ankitsharma6466" target="_blank"><img src="res/twitter-logo-button.svg"/></a><a class="icon" href="https://angel.co/ankitsharma6466" target="_blank"><img src="res/angellist.svg"/></a></div></div></div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ankit Sharma - Software Engineering Manager</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Custom CSS for Glassmorphism and Background Animation */
+    body {
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      /* Prevent horizontal scroll due to animations */
+      background-color: #000;
+      /* Made body background explicitly black */
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      /* For Safari */
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.45);
+    }
+
+    /* Background animation */
+    .animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* Initial background with two radial gradients and their positions.
+               The animation will now be controlled by JavaScript. */
+      background: radial-gradient(circle at 20% 80%, rgba(29, 78, 216, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.2) 0%, transparent 50%);
+      background-size: 150% 150%, 150% 150%;
+      background-repeat: no-repeat;
+      transition: background-position 0.1s linear;
+      /* Keep smooth transition for position changes */
+      z-index: 0;
+    }
+
+    /* Timeline specific styles - REMOVED line and dot specific styles */
+    .timeline-container {
+      position: relative;
+      /* Removed padding-left: 20px; */
+    }
+
+    /* Removed .timeline-container::before {} */
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+      /* Removed padding-left: 40px; */
+      opacity: 0;
+      /* Hidden by default for scroll animation */
+      transform: translateY(20px);
+      /* Start slightly below */
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .timeline-item.animate-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Removed .timeline-item::before {} */
+
+    /* Subtle fade-in animation for general content */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Download button animation */
+    .download-button {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .download-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: all 0.5s;
+      z-index: -1;
+    }
+
+    .download-button:hover::before {
+      left: 100%;
+    }
+
+    /* Responsive social icons */
+    @media (max-width: 767px) {
+      .social-sidebar {
+        display: none;
+        /* Hide sidebar on mobile */
+      }
+
+      .social-footer {
+        display: flex;
+        /* Show footer on mobile */
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gray-900 text-gray-200 min-h-screen flex flex-col relative">
+
+  <div class="animated-bg"></div>
+
+  <div class="relative z-10 p-4 md:p-8 lg:p-12 flex-grow">
+    <section id="hero" class="glass-card mb-12 p-8 md:p-12 text-center max-w-5xl mx-auto fade-in">
+      <img src="profile.jpg" alt="Profile Picture"
+        class="rounded-full mx-auto mb-6 shadow-lg border-2 border-purple-400" style="height: 300px;">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight">Ankit Sharma</h1>
+      <p class="text-xl md:text-2xl text-purple-300 mb-6">Senior Engineering Manager</p>
+      <p class="text-md md:text-lg text-gray-300 mb-8 max-w-4xl mx-auto">
+        A seasoned Software Engineering Manager with experience in leading high-performing teams, driving technical
+        strategy, and delivering impactful solutions. Passionate about products, user experience and bridging the gap
+        with engineering excellence.
+      </p>
+      <div class="flex flex-wrap justify-center items-center gap-6 mb-8">
+        <a href="https://www.linkedin.com/in/ankitsharma6466/" target="_blank"
+          class="text-gray-300 hover:text-blue-400 transition-colors duration-300 flex items-center">
+          <i class="fab fa-linkedin-in text-xl mr-2"></i> LinkedIn
+        </a>
+        <a href="mailto:ankit.sharma@example.com"
+          class="text-gray-300 hover:text-red-400 transition-colors duration-300 flex items-center">
+          <i class="fas fa-envelope text-xl mr-2"></i> ankitsharma6466@gmail.com
+        </a>
+      </div>
+      <!-- <a href="#download-resume"
+        class="download-button inline-block px-8 py-4 bg-purple-600 text-white font-semibold rounded-full shadow-lg hover:bg-purple-700 transition-all duration-300 ease-in-out transform hover:scale-105">
+        Download Resume <i class="fas fa-download ml-2"></i>
+      </a> -->
+    </section>
+
+    <section id="experience" class="max-w-5xl mx-auto py-12">
+      <h2 class="text-4xl font-bold text-white text-center mb-12">Work Experience</h2>
+      <div class="timeline-container relative">
+        <div class="timeline-item glass-card p-6 mb-8 md:p-8">
+          <h3 class="text-xl md:text-2xl font-semibold text-white mb-2">
+            <span class="text-white">JP Morgan Chase</span>
+          </h3>
+          <p class="text-l md:text-md text-purple-300 mb-4">Sr. Manager of Software Engineering&nbsp;<span
+              class="text-gray-400">(Sep 2022 – Present)</span></p>
+          <ul class="list-disc list-inside text-gray-300 space-y-2 mb-4">
+            <li>Leading frontend engineering across Web, Android, and iOS platforms, driving alignment in architecture,
+              design systems, and development practices to deliver cohesive, high-quality user experiences.</li>
+            <li>Shape technical direction and execution strategy, collaborating closely with product and design to
+              deliver impactful features.</li>
+            <li>Grew and led high-performing engineering team, driving hiring strategy, team structure, establishing
+              clear career paths, fostering a culture of ownership, and scaling leadership within the team.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item glass-card p-6 mb-8 md:p-8">
+          <h3 class="text-xl md:text-2xl font-semibold text-white mb-2">
+            <span class="text-white">Stealth Startup</span>
+          </h3>
+          <p class="text-l md:text-md text-purple-300 mb-4">Founding Engineer&nbsp;<span class="text-gray-400">(Oct 2021 –
+              July 2022)</span></p>
+          <ul class="list-disc list-inside text-gray-300 space-y-2 mb-4">
+            <li>Solely designed, developed and shipped the mobile apps for both Android and iOS platforms within 3
+              weeks.</li>
+            <li>Worked on features across the spectrum of product including frontend, mobile and backend apis.</li>
+            <li>Played a key role in influencing the core UX and UI of the product through metrics and direct customer
+              interaction.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item glass-card p-6 mb-8 md:p-8">
+          <h3 class="text-xl md:text-2xl font-semibold text-white mb-2">
+            <span class="text-white">Citymapper</span>
+          </h3>
+          <p class="text-l md:text-md text-purple-300 mb-4">Engineering Lead - Consumer Apps&nbsp;<span
+              class="text-gray-400">(Sep 2018 – Oct 2021)</span></p>
+          <ul class="list-disc list-inside text-gray-300 space-y-2 mb-4">
+            <li>Led consumer apps team - Android and iOS - used daily by millions of users worldwide.</li>
+            <li>Worked closely with the CEO on a day-to-day basis, helped set product roadmaps, and executed with team.
+            </li>
+            <li>Championed the implementation of several R&D projects that were eventually shipped to production.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item glass-card p-6 mb-8 md:p-8">
+          <h3 class="text-xl md:text-2xl font-semibold text-white mb-2">
+            <span class="text-white">Shuttl</span>
+          </h3>
+          <p class="text-l md:text-md text-purple-300 mb-4">Technology Architect&nbsp;<span class="text-gray-400">(Sep 2015 –
+              Aug 2018)</span></p>
+          <ul class="list-disc list-inside text-gray-300 space-y-2 mb-4">
+            <li>Led development efforts, code reviews, team mentoring for Android and Web.</li>
+            <li>Played a key role in App architecture decisions, core refactoring, driving long term strategy and
+              following best practices</li>
+            <li>Did performance profiling, benchmarking and contributed heavily to developer experience</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item glass-card p-6 mb-8 md:p-8">
+          <h3 class="text-xl md:text-2xl font-semibold text-white mb-2">
+            <span class="text-white">Finbox</span>
+          </h3>
+          <p class="text-l md:text-md text-purple-300 mb-4">Co-Founder&nbsp;<span class="text-gray-400">(Mar 2015 – Sep
+              2015)</span></p>
+          <ul class="list-disc list-inside text-gray-300 space-y-2 mb-4">
+            <li>Designed and developed personal finance management app with two other founders</li>
+            <li>I was primarily responsible for Product design and developed the web and mobile app.</li>
+            <li>Our apps reached an organic growth of 5000+ users within the first 4 months.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item glass-card p-6 mb-8 md:p-8">
+          <h3 class="text-xl md:text-2xl font-semibold text-white mb-2">
+            <span class="text-white">Healthkart</span>
+          </h3>
+          <p class="text-l md:text-md text-purple-300 mb-4">Software Engineer&nbsp;<span class="text-gray-400">(Mar 2014 –
+              Mar 2015)</span></p>
+          <ul class="list-disc list-inside text-gray-300 space-y-2 mb-4">
+            <li>I was part of the frontend and android team.</li>
+            <li>Mainly looked after the consumer flows including the main website, checkout flow and android app.</li>
+            <li>Converted the website from two different codebases for mobile and desktop to single responsive design.
+            </li>
+          </ul>
+        </div>
+
+        <div class="timeline-item glass-card p-6 mb-8 md:p-8">
+          <h3 class="text-xl md:text-2xl font-semibold text-white mb-2">
+            <span class="text-white">Servosys</span>
+          </h3>
+          <p class="text-l md:text-md text-purple-300 mb-4">Software Engineer&nbsp;<span class="text-gray-400">(Feb 2013 –
+              Mar 2014)</span></p>
+          <ul class="list-disc list-inside text-gray-300 space-y-2 mb-4">
+            <li>Primarily worked and owned Android and frontend projects</li>
+            <li>Single handedly developed and shipped to production several mobile apps for different clients.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <h2 class="text-4xl font-bold text-white text-center mb-12">Social</h2>
+    <section id="social" class="glass-card mb-12 p-8 md:p-12 max-w-5xl mx-auto fade-in">
+      <div class="space-y-6">
+        <div class="mb-12">
+          <h3 class="text-xl md:text-2xl font-semibold mb-2 text-white">Github</h3>
+          <a href="https://github.com/ankitsharma6466/" target="_blank"
+            class="text-gray-300 hover:text-blue-400 transition-colors duration-300 flex items-center">
+            https://github.com/ankitsharma6466/
+          </a>
+        </div>
+        <div class="mb-6">
+          <h3 class="text-xl md:text-2xl font-semibold mb-2 text-white">Blogs</h3>
+          <ul class="list-disc list-inside text-gray-300 space-y-2 mb-4">
+            <li>
+              <a href="https://medium.com/@ankitsharma6466/my-2-cents-interviews-and-its-shenanigans-c083751c0177"
+                target="_blank"
+                class="text-gray-300 hover:text-blue-400 transition-colors duration-300">
+                My 2 cents — Interviews and its shenanigans
+              </a>
+            </li>
+            <li>
+              <a href="https://medium.com/android-news/why-to-choose-mvvm-over-mvp-android-architecture-33c0f2de5516"
+                target="_blank"
+                class="text-gray-300 hover:text-blue-400 transition-colors duration-300">
+                Why to choose MVVM over MVP — Android Architecture
+              </a>
+            </li>
+            <li>
+              <a href="https://medium.com/@ankitsharma6466"
+                target="_blank"
+                class="text-gray-300 hover:text-blue-400 transition-colors duration-300">
+                More on Medium...
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <h2 class="text-4xl font-bold text-white text-center mb-12">Education</h2>
+    <section id="education" class="glass-card mb-12 p-8 md:p-12 max-w-5xl mx-auto fade-in">
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-xl md:text-2xl font-semibold text-white">Oracle Certified Java Programmer</h3>
+          <p class="text-md text-purple-300">Sun Microsystems</p>
+        </div>
+        <div>
+          <h3 class="text-xl md:text-2xl font-semibold text-white">Bachelor of Technology</h3>
+          <p class="text-md text-purple-300">Maharishi dayanand University</p>
+          <p class="text-sm text-gray-400">2009 – 2013</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer
+    class="social-footer glass-card fixed bottom-0 left-0 right-0 p-4 flex justify-around items-center z-50 md:hidden">
+    <a href="https://www.linkedin.com/in/ankitsharma6466/" target="_blank"
+      class="text-gray-300 hover:text-blue-400 transition-colors duration-300">
+      <i class="fab fa-linkedin-in text-2xl"></i>
+    </a>
+    <a href="https://github.com/ankitsharma" target="_blank"
+      class="text-gray-300 hover:text-purple-400 transition-colors duration-300">
+      <i class="fab fa-github text-2xl"></i>
+    </a>
+    <a href="mailto:ankit.sharma@example.com" class="text-gray-300 hover:text-red-400 transition-colors duration-300">
+      <i class="fas fa-envelope text-2xl"></i>
+    </a>
+  </footer>
+
+  <script>
+    // Intersection Observer for scroll animations
+    document.addEventListener('DOMContentLoaded', () => {
+      const timelineItems = document.querySelectorAll('.timeline-item');
+      const heroSection = document.getElementById('hero');
+      const educationSection = document.getElementById('education');
+      const socialSection = document.getElementById('social');
+      const animatedBg = document.querySelector('.animated-bg');
+
+      // Function to update background position and opacity based on scroll
+      const updateBackground = () => {
+        const scrollY = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollProgress = docHeight > 0 ? Math.min(scrollY / docHeight, 1) : 0; // 0 to 1, capped at 1
+
+        // Calculate opacity: starts at 0.2, goes down to 0.0 as scrollProgress goes from 0 to 1
+        const opacity = 0.2 * (1 - scrollProgress);
+
+        // Original background gradient positions
+        const bg1_x = 20 + (scrollProgress * 80); // 20% to 100%
+        const bg1_y = 80 - (scrollProgress * 80); // 80% to 0%
+
+        const bg2_x = 80 - (scrollProgress * 80); // 80% to 0%
+        const bg2_y = 20 + (scrollProgress * 80); // 20% to 100%
+
+        // Apply updated background with dynamic opacity
+        animatedBg.style.background = `
+                    radial-gradient(circle at ${bg1_x}% ${bg1_y}%, rgba(29, 78, 216, ${opacity}) 0%, transparent 50%),
+                    radial-gradient(circle at ${bg2_x}% ${bg2_y}%, rgba(168, 85, 247, ${opacity}) 0%, transparent 50%)
+                `;
+      };
+
+      // Initial call to set the background on load
+      updateBackground();
+      // Add scroll event listener to update background
+      window.addEventListener('scroll', updateBackground);
+
+
+      // Options for the Intersection Observer
+      const options = {
+        root: null, // viewport
+        rootMargin: '0px',
+        threshold: 0.1 // 10% of the item visible to trigger
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+            observer.unobserve(entry.target); // Stop observing once animated
+          }
+        });
+      }, options);
+
+      timelineItems.forEach(item => {
+        observer.observe(item);
+      });
+      observer.observe(educationSection);
+      observer.observe(socialSection);
+
+      // Add fade-in to hero section immediately
+      heroSection.classList.add('fade-in');
+    });
+  </script>
+</body>
+
+</html>
